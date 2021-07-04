@@ -1,0 +1,27 @@
+<launch>
+   <arg name="x" default="1"/> 
+   <arg name="y" default = "1" /> 
+   <arg name="tol" default = "0.01" />
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_A">
+       <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_B">
+       <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="rospygotogoal.py" name="gotogoalA">
+       <param name="x" value="$(arg x)"/>
+       <param name="y" value="$(arg y)"/>
+       <param name="tol" value="$(arg tol)"/>
+    <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="rospygotogoal.py" name="gotogoalB">
+       <param name="x" value="8"/>
+       <param name="y" value="8"/>
+       <param name="tol" value="0.01"/>>
+    <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node> 
+</launch>

@@ -1,0 +1,17 @@
+<launch>
+   <arg name="x" default="1"/> 
+   <arg name="y" default = "1" /> 
+   <arg name="tol" default = "0.1" />
+
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node">
+
+   </node>
+
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circle">
+       <param name="x" value="3"/>
+       <param name="y" value="3"/>
+       <param name="tol" value="0.1"/>>
+   </node> 
+</launch>

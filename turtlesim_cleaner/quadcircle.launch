@@ -1,0 +1,47 @@
+<launch>
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_A">
+       <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleA">
+       <param name="x" value="3"/>
+       <param name="y" value="3"/>
+       <param name="tol" value="0.1"/>>
+    <remap from="turtle1/cmd_vel" to="nodeA_cmdvel"/>
+   </node>
+    
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_B">
+       <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleB">
+       <param name="x" value="3"/>
+       <param name="y" value="-3"/>
+       <param name="tol" value="0.1"/>>
+    <remap from="turtle1/cmd_vel" to="nodeB_cmdvel"/>
+   </node>
+              
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_C">
+       <remap from="turtle1/cmd_vel" to="nodeC_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleC">
+       <param name="x" value="6"/>
+       <param name="y" value="3"/>
+       <param name="tol" value="0.1"/>>
+    <remap from="turtle1/cmd_vel" to="nodeC_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node_D">
+       <remap from="turtle1/cmd_vel" to="nodeD_cmdvel"/>
+   </node>
+
+   <node pkg="turtlesim_cleaner" type="circle.py" name="circleD">
+       <param name="x" value="9"/>
+       <param name="y" value="-4.5"/>
+       <param name="tol" value="0.1"/>>
+    <remap from="turtle1/cmd_vel" to="nodeD_cmdvel"/>
+   </node>          
+    
+</launch>
